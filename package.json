@@ -1,9 +1,12 @@
 {
-  "name": "de-sardi-lib",
-  "version": "0.0.1",
+  "name": "@senzid/de-sardi-lib",
+  "version": "0.0.2",
   "description": "Reusable react components library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/senzid"
+  },
   "scripts": {
     "test": "echo \"no test defined yet\" && exit 1",
     "build": "rollup -c"
@@ -18,6 +21,10 @@
   ],
   "author": "jdesardi",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
