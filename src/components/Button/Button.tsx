@@ -1,9 +1,11 @@
 import React from 'react';
 
-interface ButtonProps {
-    label: string
+interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+{
+
 }
 
-export const Button = (props:ButtonProps) => {
-  return <button>{props.label}</button>
+export const Button: React.FC<ButtonProps> = (props) => {
+    const {children} = props
+  return <button {...props}>{children}</button>
 }
