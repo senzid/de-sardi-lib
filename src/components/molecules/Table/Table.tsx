@@ -4,8 +4,7 @@ import {Button} from '../../atoms/Button/Button'
 
 
 interface Props<TElement> {
-  
-  keyExtractor:(item:TElement)=>number|string;
+  keyExtractor:(item:TElement)=>string|number;
   columnRender: Array<{title:string,renderItem:(item:TElement)=>React.ReactNode;}>;
   dataSource?: TElement[];
   theme?: string;
@@ -42,7 +41,7 @@ export const Table =<TElement extends unknown>({
     return rows
   }
 
-  const previuousDisabled = ():boolean => {
+  const previuousDisabled = () => {
     return pagination?.currentPage === 1 ? true : false
   }
 

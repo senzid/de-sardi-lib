@@ -10,5 +10,5 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const {children,color='#F0F0F0',className='primary'} = props
   const style = className==='primary'?{backgroundColor:color}:{color:color}
   
-  return <button style={style} {...props}>{children}</button>
+  return (<><button style={style} {...props}>{children}</button><button style={style} {...props}>{children}</button></>)
 }
