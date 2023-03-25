@@ -30,7 +30,7 @@ export const Table =<TElement extends unknown>({
 
   const isLoading = () => {
     let rows =[]
-    const totalRows = pagination?pagination.numberResults: 10
+    const totalRows = pagination?pagination.numberResults: 5
     for (let i = 0; i < totalRows; i++) {
       rows.push(
       <tr key={`loading_${i}`}>

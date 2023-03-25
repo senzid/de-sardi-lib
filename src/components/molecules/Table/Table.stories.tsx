@@ -27,11 +27,22 @@ const columns = [{
   }
 
 
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args}
+const TemplatePagination: ComponentStory<typeof Table> = (args) => <Table {...args}
 columnRender={columns}
 dataSource={tableData}
 keyExtractor={(item)=>item.id}
 pagination={pagination}/>;
+
+export const tablePagination = TemplatePagination.bind({});
+tablePagination.args = {
+    loading: true
+}
+
+const Template: ComponentStory<typeof Table> = (args) => <Table {...args}
+columnRender={columns}
+dataSource={tableData}
+keyExtractor={(item)=>item.id}
+/>;
 
 export const table = Template.bind({});
 table.args = {
