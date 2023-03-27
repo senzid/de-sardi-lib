@@ -8,7 +8,7 @@ The projects will be totally opened during few days. If you are trying to instal
 
 This project is built in atomic-design pattern. It means that we have self contained components with everything they need in each component folder. In our case the most basic components are atoms (modal and button) and components that need others simple components are molecules (table).
 
-The project is created with rollup as a bundler for handle dependencys, build and compile because is more faster and efficent that webpack por this type of projects.
+The project is created with rollup as a bundler for handle the dependencys, build and compile because is more faster and efficent that webpack por this type of projects.
 
 ## Available Scripts
 
