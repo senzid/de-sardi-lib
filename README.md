@@ -14,7 +14,7 @@ The project is created with rollup as a bundler for handle the dependencys, buil
 
 In the project directory, you can run:
 
-### `npm storybook`
+### `npm run storybook`
 
 Runs storybook based on stories of the components
 

@@ -41,17 +41,32 @@ export const Table =<TElement extends unknown>({
     return rows
   }
 
-  const previuousDisabled = () => {
+  const isPreviuousDisabled = () => {
     return pagination?.currentPage === 1 ? true : false
   }
 
-  const nextDisabled = () => {
+  const isNextDisabled = () => {
     return pagination?.currentPage === pagination?.total ? true : false
   }
 
+  const renderBody = () => {
+    return (loading ? 
+      isLoading() :
+      dataSource?.map((item)=>{
+        return(
+          <tr key={keyExtractor(item)}>
+            {columnRender.map((col)=>{
+              return <td key={keyExtractor(item)+col.title} >{col.renderItem(item)}</td>
+            })}
+          </tr>
+        )
+      })
+    )
+  }
+
   return (
-    <table className="Table">
-      <thead className="Head">
+    <table className="table">
+      <thead className="table-head">
         <tr>
           {columnRender.map((col)=>{
             return(
@@ -61,25 +76,15 @@ export const Table =<TElement extends unknown>({
         </tr>
       </thead>
       <tbody className="Body">
-        {loading ? isLoading() :
-        dataSource?.map((item)=>{
-          return(
-            <tr key={keyExtractor(item)}>
-            {columnRender.map((col)=>{
-              return <td key={keyExtractor(item)+col.title} >{col.renderItem(item)}</td>
-            })}
-            </tr>
-            )
-          })}
-        
+        {renderBody()}
       </tbody>
       { pagination &&
-        <tfoot className="Foot">
+        <tfoot className="table-foot">
           <tr>
             <td colSpan={columnRender.length}>
               {pagination.filters} {`page ${pagination.currentPage}/${pagination.total}`} 
-              <Button onClick={pagination.onBack} disabled={previuousDisabled()} style={{margin:'0 5px'}} className="outlined" color="black">previous</Button> 
-              <Button onClick={pagination.onNext} disabled={nextDisabled()} style={{marginRight:'5px'}} className="outlined" color="black">next</Button>
+              <Button onClick={pagination.onBack} disabled={isPreviuousDisabled()} className="outlined">previous</Button> 
+              <Button onClick={pagination.onNext} disabled={isNextDisabled()} className="outlined">next</Button>
             </td>
           </tr>
         </tfoot>

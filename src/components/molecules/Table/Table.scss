@@ -1,4 +1,4 @@
-.Table {
+.table {
     border-collapse: collapse;
     border-radius: 0.75em;
     overflow: hidden;
@@ -6,7 +6,7 @@
     margin: 2em 10vh;
   }
   
-  .Table .Head,.Foot tr {
+  .table .table-head,.table-foot tr {
     background-color: #009879;
     color: #ffffff;
   }
@@ -18,20 +18,23 @@
     height: 2.8em;
   }
   
-  .Table tbody tr {
+  .table tbody tr {
     border-right: 1px solid #009879;
     border-left: 1px solid #009879;
     border-bottom: 1px solid #dddddd;
   }
   
-  .Table tbody tr:nth-of-type(even) {
+  .table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
   }
   
-  .Table tbody tr:hover {
+  .table tbody tr:hover {
     background-color: #00987930;
   }
   
-  .Foot td {
+  .table-foot td {
     text-align: right;
+    button {
+      margin: 0 5px;
+    };
   }
