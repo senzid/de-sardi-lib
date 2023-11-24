@@ -82,9 +82,15 @@ export const Table =<TElement extends unknown>({
         <tfoot className="table-foot">
           <tr>
             <td colSpan={columnRender.length}>
-              {pagination.filters} {`page ${pagination.currentPage}/${pagination.total}`} 
-              <Button onClick={pagination.onBack} disabled={isPreviuousDisabled()} className="outlined">previous</Button> 
-              <Button onClick={pagination.onNext} disabled={isNextDisabled()} className="outlined">next</Button>
+              <div className="footer-content">
+                <div>
+                  {pagination.filters} {`page ${pagination.currentPage}/${pagination.total}`} 
+                </div>
+                <div>
+                  <Button onClick={pagination.onBack} disabled={isPreviuousDisabled()} className="outlined">previous</Button> 
+                  <Button onClick={pagination.onNext} disabled={isNextDisabled()} className="outlined">next</Button>
+                </div>
+              </div>
             </td>
           </tr>
         </tfoot>

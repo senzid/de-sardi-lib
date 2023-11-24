@@ -38,3 +38,9 @@
       margin: 0 5px;
     };
   }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    height: fit-content;
+  }
