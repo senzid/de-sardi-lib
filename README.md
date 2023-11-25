@@ -1,8 +1,15 @@
 # Getting Started
 
-This project is hosted in a public github package repository available and distributed with npm.
+This project is hosted in a private github package repository available and distributed with npm.
 
 The projects will be totally opened during few days. If you are trying to install it as a external library and credentials failed message appears contact to @senzid to obtain permissions or a valid token.
+
+## Use this library
+
+To install the library run on your terminal:
+```shellscript
+npm install @senzid/de-sardi-lib
+```
 
 ## Project Structure
 
@@ -12,7 +19,7 @@ The project is created with rollup as a bundler for handle the dependencys, buil
 
 ## Available Scripts
 
-In the project directory, you can run:
+If you clon this repository, in the project directory, you can run:
 
 ### `npm run storybook`
 
@@ -28,4 +35,4 @@ Builds the app for production.
 
 ### `npm publish`
 
-Publish built app to npm. It's mandatory upgrade the version in package.json.
+If you have acces, this command publish built app to npm. It's mandatory upgrade the version in package.json.
